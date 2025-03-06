@@ -1,7 +1,7 @@
 ---
 name: Lint
 
-on: # yamllint disable-line rule:truthy
+on:
   push: null
   pull_request: null
 
@@ -9,15 +9,9 @@ permissions:
   contents: read
 
 jobs:
-#  lint:
-    # Super-linter workflow running in check only mode
-    # See https://github.com/super-linter/super-linter#get-started
-
-  fix-lint-issues:
+  lint:
     permissions:
-      # To write linting fixes
       contents: write
-      # To write Super-linter status checks
       statuses: write
     runs-on: ubuntu-latest
     steps:
@@ -25,10 +19,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Super-Linter
-        uses: super-linter/super-linter@v7.3.0 # x-release-please-version
+        uses: super-linter/super-linter@v7.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Set your fix mode variables to true
           FIX_SHELL_SHFMT: true
           FIX_YAML_PRETTIER: true
           VALIDATE_CHECKOV: false
