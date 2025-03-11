@@ -15,6 +15,15 @@ jobs:
         run: |
           echo '{"key-example": "value-example"}' > artifact-example.json
 
+      - name: Install jc
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: jc
+          version: 1.0
+
+      - name: Test JC
+        run: jc -h
+
       - name: Upload JSON artifact
         uses: actions/upload-artifact@v4
         with:
