@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: [JSON Artifact]
     branches: [dev]
-    types: [requested]
+#    types: [requested]
 
 #on:
 #  push: null
