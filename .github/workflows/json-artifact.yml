@@ -1,21 +1,19 @@
-name: JSON Artifact example
+name: Artifact
 
 on:
   push:
     branches: [ "dev" ]
 
-  # Hook to optionally run this (manually) from the Actions tab
-  workflow_dispatch:
-
 jobs:
   build:
+    name: Artifact
     runs-on: ubuntu-latest
     steps:
       - name: JSON file
         run: |
           echo '{"key-example": "value-example"}' > artifact-example.json
 
-      - name: Install jc
+      - name: Install JC
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: jc
@@ -24,15 +22,8 @@ jobs:
       - name: Test JC
         run: jc -h
 
-      - name: Upload JSON artifact
+      - name: Upload JSON Artifact
         uses: actions/upload-artifact@v4
         with:
           name: json-artifact-example
           path: artifact-example.json
-      - name: Upload logs as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: pipeline-logs
-          path: |
-            ${{ github.workspace }}/logs/*.log
-            ${{ github.workspace }}/logs/*.txt
