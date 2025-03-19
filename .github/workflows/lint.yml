@@ -1,17 +1,21 @@
 name: Lint
 
 on:
-  push: null
-  pull_request: null
+  workflow_run:
+    workflows: [JSON Artifact]
+    types: [completed]
+
+#on:
+#  push: null
+#  pull_request: null
 
 permissions:
-  contents: read
+  contents: write
+  statuses: write
 
 jobs:
   lint:
-    permissions:
-      contents: write
-      statuses: write
+    name: "Lint"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

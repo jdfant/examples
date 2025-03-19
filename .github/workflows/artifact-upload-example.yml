@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: "JSON Artifact"
     runs-on: ubuntu-latest
     steps:
       - name: JSON file
