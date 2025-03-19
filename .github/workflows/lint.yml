@@ -2,12 +2,10 @@ name: Lint
 
 on:
   workflow_run:
-    workflows: [Artifact]
-    branches: [dev]
-    types: [completed]
-
-  push: null
-  pull_request: null
+    workflows: ["JSON Artifact"]
+    branches: [ "dev" ]  # Ensure it runs when triggered from 'dev'
+    types:
+      - completed
 
 permissions:
   contents: write
