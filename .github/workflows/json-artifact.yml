@@ -1,15 +1,12 @@
-name: JSON Artifact example
+name: JSON Artifact
 
 on:
   push:
     branches: [ "dev" ]
 
-  # Hook to optionally run this (manually) from the Actions tab
-  workflow_dispatch:
-
 jobs:
   build:
-    name: "JSON Artifact"
+    name: JSON Artifact
     runs-on: ubuntu-latest
     steps:
       - name: JSON file
