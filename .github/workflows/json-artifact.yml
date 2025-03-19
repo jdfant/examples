@@ -1,4 +1,4 @@
-name: JSON Artifact
+name: Artifact
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: JSON Artifact
+    name: Artifact
     runs-on: ubuntu-latest
     steps:
       - name: JSON file

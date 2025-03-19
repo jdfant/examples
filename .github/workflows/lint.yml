@@ -2,17 +2,19 @@ name: Lint
 
 on:
   workflow_run:
-    workflows: [JSON Artifact]
+    workflows: [Artifact]
     branches: [dev]
-#    types: [requested]
+    types: [completed]
 
-#on:
-#  push: null
-#  pull_request: null
+  push: null
+  pull_request: null
 
 permissions:
   contents: write
   statuses: write
+  id-token: write
+  actions: read
+  pull-requests: write
 
 jobs:
   lint:
