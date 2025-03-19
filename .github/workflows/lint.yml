@@ -2,7 +2,8 @@ name: Lint
 
 on:
   workflow_run:
-    workflows: [Upload JSON Artifact]
+    workflows: [JSON Artifact example]
+    branches: [dev]
     types: [completed]
 
 #on:
