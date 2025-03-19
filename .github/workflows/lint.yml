@@ -3,7 +3,7 @@ name: Lint
 on:
   workflow_run:
     workflows: ["JSON Artifact"]
-    branches: [ "dev" ]  # Ensure it runs when triggered from 'dev'
+    branches: ["dev"]
     types:
       - completed
 
@@ -22,6 +22,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Super-Linter
         uses: super-linter/super-linter@v7.3.0
         env:
