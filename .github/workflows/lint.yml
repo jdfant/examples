@@ -3,7 +3,7 @@ name: Lint
 on:
   workflow_run:
     workflows: [Artifact]
-    types: [completed]
+    types: [requested]
 
 permissions:
   contents: write
