@@ -2,9 +2,8 @@ name: Lint
 
 on:
   workflow_run:
-    workflows: ["JSON Artifact"]
-    types:
-      - completed
+    workflows: [Artifact]
+    types: [completed]
 
 permissions:
   contents: write
